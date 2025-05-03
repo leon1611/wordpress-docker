@@ -2,7 +2,7 @@
 
 ## 1. Título
 
-**Práctica No 5: WordPress y uso de comandos básicos para contenedores MySQL y phpAdmin **
+**Práctica No 5**: WordPress y uso de comandos básicos para contenedores MySQL y phpAdmin
 
 ## 2. Tiempo de duración
 
@@ -35,7 +35,7 @@ Los siguientes comandos se utilizaron para crear y configurar los contenedores y
 
 ## 4. Conocimientos previos
 
-Para realizar esta práctica, es necesario tener conocimientos básicos sobre **Docker**, la creación y gestión de contenedores, y cómo gestionar bases de datos MySQL. Además, se requiere conocer acerca de  **WordPress**, sus configuraciones y la gestión de bases de datos en MySQL.
+Para realizar esta práctica, es necesario tener conocimientos básicos sobre Docker, la creación y gestión de contenedores, y cómo gestionar bases de datos MySQL. Además, se requiere conocer acerca de  WordPress, sus configuraciones y la gestión de bases de datos en MySQL.
 
 MySQL es un sistema de gestión de bases de datos relacional (RDBMS) de código abierto que utiliza el lenguaje de consulta estructurado (SQL) para acceder y gestionar los datos almacenados en sus bases de datos. MySQL es ampliamente utilizado por desarrolladores web debido a su fiabilidad y velocidad, y es compatible con varios sistemas operativos, como Windows, Linux y macOS. Se usa comúnmente en aplicaciones web y de servidor, y es la base de muchas aplicaciones de código abierto, como WordPress y Drupal, según lo afirma **(Davis, 2015).**
 
@@ -44,13 +44,13 @@ De acuerdo con **(Wikimedia Foundation, 2022)**, phpMyAdmin es una herramienta d
 WordPress es un sistema de gestión de contenidos (CMS) de código abierto que permite a los usuarios crear y administrar sitios web sin necesidad de conocer código, afirma **(McGrath, 2018)**. Es especialmente popular para la creación de blogs, pero también se utiliza para desarrollar sitios web más complejos. WordPress se basa en PHP y MySQL, lo que le permite ser altamente personalizable a través de plugins y temas, y es utilizado por millones de usuarios en todo el mundo 
 ## 5. Objetivos a alcanzar
 
-- Crear un contenedor de **MySQL** con credenciales personalizadas.
+- Crear un contenedor de MySQL con credenciales personalizadas.
     
-- Crear un contenedor de **WordPress** y configurarlo para conectarse a la base de datos MySQL.
+- Crear un contenedor de WordPress y configurarlo para conectarse a la base de datos MySQL.
     
 - Crear una red Docker personalizada para asegurar la comunicación entre los contenedores.
     
-- Acceder a **phpMyAdmin** para gestionar la base de datos MySQL de WordPress
+- Acceder a phpMyAdmin para gestionar la base de datos MySQL de WordPress
     
 - Crear un volumen para WordPress y MySQL.
 
@@ -81,54 +81,74 @@ WordPress es un sistema de gestión de contenidos (CMS) de código abierto que p
 
 Figura 1. **"Comando docker volume create "**.
 
+<img width="470" alt="3" src="https://github.com/user-attachments/assets/cda4a3a0-ee1d-49fc-b18c-f96e0bd552ff" />
 
 ---
 **Paso 2:** Crear un contenedor para MySQL.
 
 Figura 2. Comando **"docker run -d --name "**.
 
-
+<img width="566" alt="4" src="https://github.com/user-attachments/assets/28ee6d56-7d68-45ca-baef-422458bb9025" />
 
 ---
 **Paso 3:** Crear un volumen para WordPress .
 
 Figura 3. Comando **"Comando docker volume create"**.
 
-
-
----
-**Paso 4:** Crear una red personalizada llamada `wordpress_net`.
-
-Figura 4. Comando **"docker network create wordpress_net"**.
-
+<img width="519" alt="2" src="https://github.com/user-attachments/assets/7f16d09e-648f-47fb-9bb9-3eb22817a1ff" />
 
 ---
-**Paso 5:** Crear un contenedor para phpMyAdmin (`phpmyadmin`).
+**Paso 4:** Crear una red personalizada llamada `wordpress-net`.
+
+Figura 4. Comando **"docker network create wordpress-net"**.
+
+<img width="539" alt="1" src="https://github.com/user-attachments/assets/3d5a2585-a93c-48b7-b8a3-910acee5d8fc" />
+
+---
+**Paso 5:** Crear un contenedor para phpMyAdmin.
 
 Figura 5. Comando **"docker run -d --name phpmyadmin"**.
 
+<img width="569" alt="5" src="https://github.com/user-attachments/assets/1498b2d5-3a5b-4117-bc30-a05860473fe6" />
 
 ---
 **Paso 6:** Crear un contenedor para WordPress .
 
 Figura 6. Comando **"docker run -d --name wordpress "**.
 
-
-
+<img width="566" alt="6" src="https://github.com/user-attachments/assets/a6b24a66-6550-47a6-ac22-01409309692a" />
 
 ---
-**Paso 7:** Conectar los contenedores a la red personalizada `wordpress_net`.
+**Paso 7:** Conectar los contenedores a la red personalizada `wordpress-net`.
 
-Figura 7. Comando **"docker network connect wordpress_net "**.
+Figura 7. Comando **"docker network connect wordpress-net "**.
 
+<img width="705" alt="7" src="https://github.com/user-attachments/assets/ee67fc7f-78cd-4741-9ad1-fe77084aee69" />
 
 
 ---
 ## 9. Resultados esperados
 
-La práctica permitió crear y gestionar contenedores Docker para **WordPress** y **MySQL**, y aprender a conectar estos contenedores entre sí mediante una red personalizada en Docker. Después de completar todos los pasos, se logró configurar un entorno funcional de WordPress con su base de datos, y se pudo acceder correctamente al panel de administración en `http://localhost:8081` para realizar la instalación y configuración inicial del sitio.
+La práctica permitió crear y gestionar contenedores Docker para WordPress y MySQL, y aprender a conectar estos contenedores entre sí mediante una red personalizada en Docker. 
 
-Además, al acceder a **phpMyAdmin** mediante `http://localhost:8080`, fue posible visualizar y administrar la base de datos de WordPress de forma sencilla y gráfica, facilitando la gestión de tablas, usuarios y datos relacionados al sitio web.
+<img width="1047" alt="dockers" src="https://github.com/user-attachments/assets/9972866b-d0df-4ed0-bf58-385246f4be2d" />
+<img width="533" alt="vols" src="https://github.com/user-attachments/assets/133a7f6d-537d-49af-b2fe-b9bb3811b944" />  
+
+
+
+<img width="382" alt="redes" src="https://github.com/user-attachments/assets/d79f76fe-0fd1-4fcd-bd63-73cc306e0c7f" />  
+
+
+
+Después de completar todos los pasos, se logró configurar un entorno funcional de WordPress con su base de datos, y se pudo acceder correctamente al panel de administración en `http://localhost:8000` para realizar la instalación y configuración inicial del sitio.  
+
+
+<img width="1060" alt="8" src="https://github.com/user-attachments/assets/9b25b33d-6201-4649-a4c5-243dfdc0d53b" />  
+
+
+Además, al acceder a phpMyAdmin mediante `http://localhost:8080`, fue posible visualizar y administrar la base de datos de WordPress de forma sencilla y gráfica, facilitando la gestión de tablas, usuarios y datos relacionados al sitio web.
+
+<img width="1059" alt="9" src="https://github.com/user-attachments/assets/a6ecda41-e103-4d5d-aa16-54d393aafd49" />
 
 La creación de una red personalizada en Docker garantizó una comunicación eficiente y segura entre los contenedores de WordPress, MySQL y phpMyAdmin.
 
